@@ -26,7 +26,7 @@ if os.path.isfile('env.py'):
 SECRET_KEY = 'django-insecure-9$8^4(z^u(q)!ig(blgljbkh@m!kiernuz%l@(a0vdtt7q1es^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-dhitchen289-boutiqueado-339n7vz1xx5.ws.codeinstitute-ide.net']
 
@@ -123,10 +123,18 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR / 'db.sqlite3'), 
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'swan_tug_hump_992032',
+        'USER': 'uzssp4o3zbi',
+        'PASSWORD': 'yEGDhPhl8zps',
+        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c timezone=UTC'
+        }
     }
 }
+
 
 
 # Password validation
@@ -159,7 +167,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
