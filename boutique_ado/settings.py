@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-dhitchen289-boutiqueado-339n7vz1xx5.ws.codeinstitute-ide.net',
-    '.herokuapp.com',
+    'boutique-ado-django1-94e626a40672.herokuapp.com',
+    'localhost',
 ]
 
 
@@ -124,21 +126,10 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swan_tug_hump_992032',
-        'USER': 'uzssp4o3zbi',
-        'PASSWORD': 'yEGDhPhl8zps',
-        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
-        'PORT': '5432',
-        'OPTIONS': {
-            'options': '-c timezone=UTC'
-        }
-    }
-}
-
-
+     'default': dj_database_url.parse('postgres://uzssp4o3zbi:yEGDhPhl8zps@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/swan_tug_hump_992032')
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
