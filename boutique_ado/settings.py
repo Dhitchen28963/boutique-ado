@@ -24,10 +24,10 @@ if os.path.isfile('env.py'):
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9$8^4(z^u(q)!ig(blgljbkh@m!kiernuz%l@(a0vdtt7q1es^'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-dhitchen289-boutiqueado-339n7vz1xx5.ws.codeinstitute-ide.net',
